@@ -20,6 +20,8 @@ package
 		[Embed(source = 'assets/background/cloud1.png')] private const CLOUD1:Class;
 		[Embed(source = 'assets/background/sky.png')] private const SKY:Class;
 		[Embed(source = 'assets/entities/bottle-outline.png')] private const OUTLINE:Class;
+		// [Embed(source = 'assets/background/arrowkeys_white.png')] private const ARROWKEY:Class;
+		// private var arrowkey:Entity;
 		private var cloud1:Cloud;
 		private var cloud2:Cloud;
 		private var sky:Entity;
@@ -40,6 +42,7 @@ package
 			sky = new Entity(0, 0, new Image(SKY));
 			cloud1 = new Cloud(-125, 129, new Image(CLOUD1));
 			cloud2 = new Cloud( -125, 129, new Image(CLOUD2));
+			// arrowkey = new Entity(20, 20, new Image(ARROWKEY));
 			movement.add(outline);
 			movement.add(trees);
 			movement.add(lotion);
@@ -59,6 +62,7 @@ package
 			add(trees.getFirst());
 			add(poof);
 			add(outline);
+		//	add(arrowkey);
 		}
 		
 		override public function update():void {

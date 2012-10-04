@@ -48,7 +48,7 @@ package
 		
 		override public function update():void 
 		{
-			if (Input.check(Key.SPACE)) {
+			if (Input.check(Key.SPACE) || Input.mousePressed) {
 				done = true;
 			}
 			sun.setX(FP.width / 180 * FP.elapsed + sun.getX());
