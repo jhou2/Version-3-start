@@ -6,6 +6,7 @@ package
 	import net.flashpunk.FP;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
+	import net.flashpunk.graphics.Text;
 	
 	public class MenuWorld extends CustomWorld
 	{
@@ -20,17 +21,18 @@ package
 		private var sky:Entity;
 		private var sun:Sun = new Sun();
 		private var trees:TreeManager = new TreeManager();
-		private var spacebar1:Entity;
-		private var arrowkeys:Entity;
-		
+	//	private var spacebar1:Entity;
+	//	private var arrowkeys:Entity;
+		private var text:Text = new Text("Click here to Start!", 50, 0, { size:50, color: 0x000000 } );
+		private var text2:Text = new Text("Use Arrow keys to play", 50, 60, { size:50, color: 0x000000 } );
 		public function MenuWorld() 
 		{
-			spacebar1 = new Entity(0, 10, new Image(SPACEBAR1));
-			arrowkeys = new Entity(50, 60, new Image(ARROWKEYS));
+		//	spacebar1 = new Entity(0, 10, new Image(SPACEBAR1));
+		//	arrowkeys = new Entity(50, 60, new Image(ARROWKEYS));
 			sky = new Entity(0, 0, new Image(SKY));
 			cloud1 = new Cloud(-125, 129, new Image(CLOUD1));
 			cloud2 = new Cloud( -125, 129, new Image(CLOUD2));
-			spacebar1.layer = -4;
+		//	spacebar1.layer = -4;
 			sky.layer = 0;
 			cloud1.layer = -2;
 			cloud2.layer = -3;
@@ -42,8 +44,10 @@ package
 			add(trees.getFirst());
 			add(trees.getLast());
 			add(new ShiftableEntity(0, 0, Image.createRect(FP.width, FP.height, 0xFFFFFF, 0.5), 99999));
-			add(spacebar1);
-			add(arrowkeys);
+		//	add(spacebar1);
+		//	add(arrowkeys);
+			addGraphic(text);
+			addGraphic(text2);
 		}
 		
 		override public function update():void 
