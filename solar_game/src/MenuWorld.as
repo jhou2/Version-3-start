@@ -25,6 +25,10 @@ package
 	//	private var arrowkeys:Entity;
 		private var text:Text = new Text("Click here to Start!", 50, 0, { size:50, color: 0x000000 } );
 		private var text2:Text = new Text("Use Arrow keys to play", 50, 60, { size:50, color: 0x000000 } );
+		private var text3:Text = new Text("Presented by: ", 50, 120, { size:20, color: 0x000000 } );
+		private var text4:Text = new Text("Dermatology Nurses Association", 50, 140, { size:20, color: 0x000000 } );
+		private var text5:Text = new Text("BCIT Game Development Club", 50, 160, { size:20, color: 0x000000 } );
+		private var text6:Text = new Text("Langara School of Nursing", 50, 180, { size:20, color: 0x000000 } );
 		public function MenuWorld() 
 		{
 		//	spacebar1 = new Entity(0, 10, new Image(SPACEBAR1));
@@ -48,6 +52,10 @@ package
 		//	add(arrowkeys);
 			addGraphic(text);
 			addGraphic(text2);
+			addGraphic(text3);
+			addGraphic(text4);
+			addGraphic(text5);
+			addGraphic(text6);
 		}
 		
 		override public function update():void 
