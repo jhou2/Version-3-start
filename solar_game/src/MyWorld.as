@@ -8,6 +8,7 @@ package
 	import net.flashpunk.FP;
 	import net.flashpunk.utils.Key;
 	import net.flashpunk.utils.Input;
+	import net.flashpunk.graphics.Text;
 	
 	/**
 	 * ...
@@ -35,6 +36,9 @@ package
 		private var amountOfBottles:int = 0;
 		private var poof:Poof;
 		private var outline:ShiftableEntity;
+		
+		private var text1:Text = new Text("Use Arrow keys to move", 10, 20, { size:20, color: 0x000000 } );
+		
 		public function MyWorld()
 		{
 			outline = new ShiftableEntity(lotion.x, lotion.y, new Image(OUTLINE), 999999);
@@ -63,6 +67,9 @@ package
 			add(poof);
 			add(outline);
 		//	add(arrowkey);
+		
+			
+			addGraphic(text1);
 		}
 		
 		override public function update():void {
