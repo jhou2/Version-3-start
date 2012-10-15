@@ -47,12 +47,13 @@ package
 			
 			if (Input.mousePressed)
 			{
-				diffx = x - Input.mouseX;
-				diffy = y - Input.mouseY;
+				diffx = Math.abs(x - Input.mouseX);
+				diffy = Math.abs(y - Input.mouseY);
 				destx = Input.mouseX;
 				desty = Input.mouseY;
 				origx = x;
 				origy = y;
+			
 				
 				if (destx > x) {
 					--sumx;
@@ -74,6 +75,8 @@ package
 					temp = total;
 					y = temp;
 					MyWorld.movement.shift(sumx * 300 * FP.elapsed);
+					
+				
 				
 				
 			}
