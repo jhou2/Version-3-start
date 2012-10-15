@@ -20,6 +20,10 @@ package
 		private var facingleft:Boolean = false;
 		private var diffx:Number = 0;
 		private var diffy:Number = 0;
+		private var destx:Number = x;
+		private var desty:Number = y;
+		private var origx:Number = x;
+		private var origy:Number = y;
 		private var burnt:Boolean = false;
 		public function MyBoy()
 		{
@@ -40,11 +44,36 @@ package
 				return;
 			}
 			var sumx:int = 0, sumy:int = 0, temp:int;
+			
 			if (Input.mousePressed)
 			{
 				diffx = x - Input.mouseX;
 				diffy = y - Input.mouseY;
+				destx = Input.mouseX;
+				desty = Input.mouseY;
+				origx = x;
+				origy = y;
 				
+				if (destx > x) {
+					--sumx;
+				}
+				
+				if (destx < x) {
+					++sumx;
+				}
+				
+				if ((desty < y) && (y > 200)) {
+					--sumy;
+				}
+				
+				if ((desty > y) && (y < 500)) {
+					++sumy;
+				}
+				
+					total += sumy * 250 * FP.elapsed;
+					temp = total;
+					y = temp;
+					MyWorld.movement.shift(sumx * 300 * FP.elapsed);
 				
 				
 			}
